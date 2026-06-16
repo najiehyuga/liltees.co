@@ -68,22 +68,43 @@
 
     <div class="available-card">
 
-        <img src="images/product1.png" alt="Smells Tee">
+        <img
+            id="mainImage"
+            class="main-product-image"
+            src="images/product1front.png"
+            alt="Void Tee"
+        >
+    
+        <div class="product-view-switch">
 
+            <button
+                class="view-btn active-view"
+                onclick="changeImage('images/product1front.png', this)">
+                FRONT
+            </button>
+        
+            <button
+                class="view-btn"
+                onclick="changeImage('images/product1.png', this)">
+                BACK
+            </button>
+        
+        </div>
+    
         <h3>Premium Cotton 24s</h3>
-
+    
         <p>
-            Oversized Boxxy fit with a clean and timeless design.
+            Oversized fit with a clean and timeless design.
         </p>
-
+    
         <div class="price">
             Rp129.000
         </div>
-
+    
         <a href="marketplace.html" class="btn-primary">
             Order Now
         </a>
-
+    
     </div>
 
 </section>
@@ -189,6 +210,20 @@
     </p>
 
 </footer>
+
+<script>
+    function changeImage(imageSrc, button){
+    
+        document.getElementById("mainImage").src = imageSrc;
+    
+        document.querySelectorAll(".view-btn")
+        .forEach(btn => {
+            btn.classList.remove("active-view");
+        });
+    
+        button.classList.add("active-view");
+    }
+    </script>
 
 </body>
 </html>

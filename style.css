@@ -473,6 +473,71 @@ footer p{
     color:#fbbf24;
 }
 
+/* PRODUCT GALLERY */
+
+.main-product-image{
+    width:350px;
+    max-width:100%;
+
+    display:block;
+    margin:auto auto 25px;
+
+    transition:.4s ease;
+}
+
+.available-card:hover .main-product-image{
+    transform:scale(1.05);
+}
+
+.product-thumbnails{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+
+    margin-bottom:25px;
+}
+
+.thumbnail{
+    width:80px;
+    height:80px;
+
+    object-fit:cover;
+
+    border-radius:12px;
+
+    cursor:pointer;
+
+    border:2px solid transparent;
+
+    transition:.3s ease;
+}
+
+.thumbnail:hover{
+    transform:scale(1.08);
+}
+
+.thumbnail.active{
+    border-color:#fbbf24;
+
+    box-shadow:
+        0 0 15px rgba(251,191,36,.25);
+}
+
+.thumb-wrapper{
+    text-align:center;
+}
+
+.thumb-wrapper span{
+    display:block;
+    margin-top:8px;
+
+    font-size:12px;
+
+    color:#94a3b8;
+
+    letter-spacing:.5px;
+}
+
 /* ===================================
    UPCOMING COLLECTION
 =================================== */
@@ -1134,4 +1199,46 @@ footer p{
     .contact-grid{
         grid-template-columns:1fr;
     }
+}
+
+.product-view-switch{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+
+    margin-bottom:25px;
+}
+
+.view-btn{
+    padding:10px 22px;
+
+    background:transparent;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:999px;
+
+    color:#94a3b8;
+
+    cursor:pointer;
+
+    font-size:14px;
+    font-weight:600;
+
+    transition:.3s ease;
+}
+
+.view-btn:hover{
+    border-color:#fbbf24;
+    color:#fbbf24;
+}
+
+.active-view{
+    background:#fbbf24;
+    color:#0f172a;
+
+    border-color:#fbbf24;
+}
+.view-btn{
+    min-width:90px;
 }
