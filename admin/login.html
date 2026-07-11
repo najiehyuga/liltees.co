@@ -5,31 +5,31 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Admin Login | Lil Tees</title>
+    <title>Login | LIL TEES Admin</title>
 
-    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="css/admin.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
 
-<div class="login-container">
+<div class="login-page">
 
-    <div class="login-card">
+    <div class="login-box">
 
-        <img src="../images/logofooter.png"
-             class="login-logo">
+        <img src="../images/logofooter.png" alt="Logo">
 
         <h1>LIL TEES</h1>
 
-        <p>
-            Admin Panel
-        </p>
+        <p>Admin Panel</p>
 
         <form id="loginForm">
 
@@ -57,9 +57,7 @@
 
             </div>
 
-            <button
-                type="submit"
-                class="login-btn">
+            <button type="submit">
 
                 Login
 
@@ -67,9 +65,9 @@
 
         </form>
 
-        <p
-            id="message"
-            class="message">
+        <p class="login-footer">
+
+            © 2026 LIL TEES
 
         </p>
 
@@ -81,7 +79,8 @@
 
 <script src="../js/supabase.js"></script>
 
-<script src="auth.js"></script>
+<script src="js/auth.js"></script>
 
 </body>
+
 </html>
