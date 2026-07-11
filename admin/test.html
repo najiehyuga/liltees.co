@@ -12,12 +12,14 @@
 
 <script>
 
+console.log("SUPABASE URL:", SUPABASE_URL);
+console.log("DB:", db);
+
 async function test(){
 
-    const { data, error } =
-await db
-.from("products")
-.select("*");
+    const { data, error } = await db
+        .from("products")
+        .select("*");
 
     console.log(data);
     console.log(error);
