@@ -1,5 +1,5 @@
 const SUPABASE_URL =
-"https://xhwpyzytwaiymeslhlx.supabase.co";
+"https://xhwpyzytwaiaymeslhlx.supabase.co";
 
 const SUPABASE_KEY =
 "sb_publishable_xxxxxxxxxxxxxxxxx";
