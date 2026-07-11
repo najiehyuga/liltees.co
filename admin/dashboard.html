@@ -3,14 +3,24 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Lil Tees Admin</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="admin.css">
+    <title>LIL TEES • Admin</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/admin.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet">
 
 </head>
 
@@ -18,79 +28,410 @@
 
 <div class="admin-layout">
 
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
     <aside class="sidebar">
 
-        <div class="sidebar-logo">
+        <div class="sidebar-top">
 
-            <img src="../images/logofooter.png">
+            <div class="sidebar-logo">
 
-            <h2>LIL TEES</h2>
+                <img src="../images/logofooter.png"
+                     alt="Lil Tees">
+
+                <div class="sidebar-logo-text">
+
+                    <h2>LIL TEES</h2>
+
+                    <p>Admin Panel</p>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html"
+                   class="active">
+
+                    🏠
+
+                    <span>Dashboard</span>
+
+                </a>
+
+                <a href="products.html">
+
+                    📦
+
+                    <span>Products</span>
+
+                </a>
+
+                <a href="stock.html">
+
+                    📈
+
+                    <span>Stock</span>
+
+                </a>
+
+                <a href="history.html">
+
+                    📜
+
+                    <span>History</span>
+
+                </a>
+
+                <a href="settings.html">
+
+                    ⚙️
+
+                    <span>Settings</span>
+
+                </a>
+
+            </nav>
 
         </div>
 
-        <nav>
+        <div class="logout">
 
-            <a class="active" href="dashboard.html">🏠 Dashboard</a>
+            <a href="#"
+               id="logoutBtn">
 
-            <a href="products.html">📦 Products</a>
+                🚪
 
-            <a href="stock.html">📈 Stock</a>
+                <span>Logout</span>
 
-            <a href="history.html">📜 History</a>
+            </a>
 
-            <a href="settings.html">⚙ Settings</a>
-
-            <a href="#" id="logoutBtn">🚪 Logout</a>
-
-        </nav>
+        </div>
 
     </aside>
 
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
     <main class="content">
+
+        <!-- =====================
+             TOPBAR
+        ====================== -->
 
         <header class="topbar">
 
-            <h1>Dashboard</h1>
+            <div>
 
-            <span id="adminEmail"></span>
+                <h1>Dashboard</h1>
+
+                <p>
+
+                    Welcome back 👋
+
+                </p>
+
+            </div>
+
+            <div class="admin-profile">
+
+                <div class="admin-avatar">
+
+                    A
+
+                </div>
+
+                <div>
+
+                    <strong id="adminEmail">
+
+                        Loading...
+
+                    </strong>
+
+                    <p>
+
+                        Administrator
+
+                    </p>
+
+                </div>
+
+            </div>
 
         </header>
+
+        <!-- =====================
+             CARD
+        ====================== -->
 
         <section class="cards">
 
             <div class="card">
 
-                <h3>Total Products</h3>
+                <div class="card-icon">
 
-                <h2 id="totalProducts">0</h2>
+                    📦
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Total Products
+
+                    </h3>
+
+                    <h2 id="totalProducts">
+
+                        0
+
+                    </h2>
+
+                </div>
 
             </div>
 
             <div class="card">
 
-                <h3>Total Stock</h3>
+                <div class="card-icon">
 
-                <h2 id="totalStock">0</h2>
+                    👕
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Total Stock
+
+                    </h3>
+
+                    <h2 id="totalStock">
+
+                        0
+
+                    </h2>
+
+                </div>
 
             </div>
 
             <div class="card">
 
-                <h3>Stock In</h3>
+                <div class="card-icon">
 
-                <h2>0</h2>
+                    📈
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Stock In
+
+                    </h3>
+
+                    <h2>
+
+                        0
+
+                    </h2>
+
+                </div>
 
             </div>
 
             <div class="card">
 
-                <h3>Stock Out</h3>
+                <div class="card-icon">
 
-                <h2>0</h2>
+                    📉
+
+                </div>
+
+                <div>
+
+                    <h3>
+
+                        Stock Out
+
+                    </h3>
+
+                    <h2>
+
+                        0
+
+                    </h2>
+
+                </div>
 
             </div>
 
         </section>
+
+        <!-- =====================
+             MAIN GRID
+        ====================== -->
+
+        <section class="dashboard-grid">
+
+                        <!-- =========================
+                 RECENT ACTIVITY
+            ========================== -->
+
+            <div class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>Recent Activity</h2>
+
+                    <span>Today</span>
+
+                </div>
+
+                <div class="activity-list">
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Product Created
+                            </h4>
+
+                            <p>
+                                SMELLS TEE berhasil ditambahkan.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            📈
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Stock Updated
+                            </h4>
+
+                            <p>
+                                Stock berubah menjadi 10 pcs.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="activity-item">
+
+                        <div class="activity-icon">
+                            🔐
+                        </div>
+
+                        <div>
+
+                            <h4>
+                                Admin Login
+                            </h4>
+
+                            <p>
+                                Login berhasil.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- =========================
+                 QUICK ACTION
+            ========================== -->
+
+            <div class="dashboard-panel">
+
+                <div class="panel-header">
+
+                    <h2>Quick Action</h2>
+
+                </div>
+
+                <div class="quick-action">
+
+                    <a href="products.html"
+                       class="quick-btn">
+
+                        ➕
+
+                        <span>Add Product</span>
+
+                    </a>
+
+                    <a href="stock.html"
+                       class="quick-btn">
+
+                        📈
+
+                        <span>Stock In</span>
+
+                    </a>
+
+                    <a href="stock.html"
+                       class="quick-btn">
+
+                        📉
+
+                        <span>Stock Out</span>
+
+                    </a>
+
+                    <a href="history.html"
+                       class="quick-btn">
+
+                        📜
+
+                        <span>History</span>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =========================
+             FOOTER
+        ========================== -->
+
+        <footer class="dashboard-footer">
+
+            <p>
+
+                © 2026 LIL TEES Admin Panel
+
+            </p>
+
+        </footer>
 
     </main>
 
@@ -100,9 +441,10 @@
 
 <script src="../js/supabase.js"></script>
 
-<script src="guard.js"></script>
+<script src="js/guard.js"></script>
 
-<script src="dashboard.js"></script>
+<script src="js/dashboard.js"></script>
 
 </body>
+
 </html>
