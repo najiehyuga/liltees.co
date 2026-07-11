@@ -9,7 +9,7 @@
 
     <title>Login | LIL TEES Admin</title>
 
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -19,59 +19,51 @@
 
 </head>
 
-<body>
+<body class="login-page">
 
-<div class="login-page">
+<div class="login-box">
 
-    <div class="login-box">
+    <img src="../images/logofooter.png" alt="Logo">
 
-        <img src="../images/logofooter.png" alt="Logo">
+    <h1>LIL TEES</h1>
 
-        <h1>LIL TEES</h1>
+    <p>Admin Panel</p>
 
-        <p>Admin Panel</p>
+    <form id="loginForm">
 
-        <form id="loginForm">
+        <div class="input-group">
 
-            <div class="input-group">
+            <label>Email</label>
 
-                <label>Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Masukkan email"
+                required>
 
-                <input
-                    type="email"
-                    id="email"
-                    placeholder="admin@email.com"
-                    required>
+        </div>
 
-            </div>
+        <div class="input-group">
 
-            <div class="input-group">
+            <label>Password</label>
 
-                <label>Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Masukkan password"
+                required>
 
-                <input
-                    type="password"
-                    id="password"
-                    placeholder="********"
-                    required>
+        </div>
 
-            </div>
+        <button type="submit">
 
-            <button type="submit">
+            Login
 
-                Login
+        </button>
 
-            </button>
+        <div id="message"></div>
 
-        </form>
-
-        <p class="login-footer">
-
-            © 2026 LIL TEES
-
-        </p>
-
-    </div>
+    </form>
 
 </div>
 
@@ -79,7 +71,7 @@
 
 <script src="../js/supabase.js"></script>
 
-<script src="js/auth.js"></script>
+<script src="../js/auth.js"></script>
 
 </body>
 
