@@ -5,22 +5,17 @@
 
     <meta charset="UTF-8">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>LIL TEES • Admin</title>
+    <title>Dashboard | LIL TEES Admin</title>
 
     <link rel="stylesheet" href="css/admin.css">
 
-    <link rel="preconnect"
-          href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
 
-    <link rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -28,410 +23,133 @@
 
 <div class="admin-layout">
 
-    <!-- =========================
-         SIDEBAR
-    ========================== -->
+    <!-- Sidebar -->
 
     <aside class="sidebar">
 
-        <div class="sidebar-top">
+        <div>
 
-            <div class="sidebar-logo">
+            <div class="logo">
 
-                <img src="../images/logofooter.png"
-                     alt="Lil Tees">
+                <img src="../images/logofooter.png" alt="Logo">
 
-                <div class="sidebar-logo-text">
-
-                    <h2>LIL TEES</h2>
-
-                    <p>Admin Panel</p>
-
-                </div>
+                <h2>LIL TEES</h2>
 
             </div>
 
             <nav>
 
-                <a href="dashboard.html"
-                   class="active">
-
-                    🏠
-
-                    <span>Dashboard</span>
-
+                <a class="active" href="dashboard.html">
+                    🏠 Dashboard
                 </a>
 
                 <a href="products.html">
-
-                    📦
-
-                    <span>Products</span>
-
+                    📦 Products
                 </a>
 
                 <a href="stock.html">
-
-                    📈
-
-                    <span>Stock</span>
-
+                    📈 Stock
                 </a>
 
                 <a href="history.html">
-
-                    📜
-
-                    <span>History</span>
-
-                </a>
-
-                <a href="settings.html">
-
-                    ⚙️
-
-                    <span>Settings</span>
-
+                    📜 History
                 </a>
 
             </nav>
 
         </div>
 
-        <div class="logout">
+        <button id="logoutBtn">
 
-            <a href="#"
-               id="logoutBtn">
+            🚪 Logout
 
-                🚪
+        </button>
 
-                <span>Logout</span>
+    </aside>
+
+    <!-- Content -->
+
+    <main class="content">
+
+        <div class="page-title">
+
+            <h1>Dashboard</h1>
+
+            <p>
+
+                Selamat datang kembali 👋
+
+            </p>
+
+        </div>
+
+        <div class="dashboard-cards">
+
+            <div class="dashboard-card">
+
+                <span>Total Produk</span>
+
+                <h2 id="totalProducts">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <span>Total Stock</span>
+
+                <h2 id="totalStock">
+
+                    0
+
+                </h2>
+
+            </div>
+
+            <div class="dashboard-card">
+
+                <span>Produk Aktif</span>
+
+                <h2 id="activeProducts">
+
+                    0
+
+                </h2>
+
+            </div>
+
+        </div>
+
+        <div class="quick-menu">
+
+            <a href="products.html">
+
+                📦
+
+                <span>Kelola Produk</span>
+
+            </a>
+
+            <a href="stock.html">
+
+                📈
+
+                <span>Kelola Stock</span>
+
+            </a>
+
+            <a href="history.html">
+
+                📜
+
+                <span>Riwayat</span>
 
             </a>
 
         </div>
-
-    </aside>
-
-    <!-- =========================
-         CONTENT
-    ========================== -->
-
-    <main class="content">
-
-        <!-- =====================
-             TOPBAR
-        ====================== -->
-
-        <header class="topbar">
-
-            <div>
-
-                <h1>Dashboard</h1>
-
-                <p>
-
-                    Welcome back 👋
-
-                </p>
-
-            </div>
-
-            <div class="admin-profile">
-
-                <div class="admin-avatar">
-
-                    A
-
-                </div>
-
-                <div>
-
-                    <strong id="adminEmail">
-
-                        Loading...
-
-                    </strong>
-
-                    <p>
-
-                        Administrator
-
-                    </p>
-
-                </div>
-
-            </div>
-
-        </header>
-
-        <!-- =====================
-             CARD
-        ====================== -->
-
-        <section class="cards">
-
-            <div class="card">
-
-                <div class="card-icon">
-
-                    📦
-
-                </div>
-
-                <div>
-
-                    <h3>
-
-                        Total Products
-
-                    </h3>
-
-                    <h2 id="totalProducts">
-
-                        0
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <div class="card-icon">
-
-                    👕
-
-                </div>
-
-                <div>
-
-                    <h3>
-
-                        Total Stock
-
-                    </h3>
-
-                    <h2 id="totalStock">
-
-                        0
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <div class="card-icon">
-
-                    📈
-
-                </div>
-
-                <div>
-
-                    <h3>
-
-                        Stock In
-
-                    </h3>
-
-                    <h2>
-
-                        0
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-            <div class="card">
-
-                <div class="card-icon">
-
-                    📉
-
-                </div>
-
-                <div>
-
-                    <h3>
-
-                        Stock Out
-
-                    </h3>
-
-                    <h2>
-
-                        0
-
-                    </h2>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- =====================
-             MAIN GRID
-        ====================== -->
-
-        <section class="dashboard-grid">
-
-                        <!-- =========================
-                 RECENT ACTIVITY
-            ========================== -->
-
-            <div class="dashboard-panel">
-
-                <div class="panel-header">
-
-                    <h2>Recent Activity</h2>
-
-                    <span>Today</span>
-
-                </div>
-
-                <div class="activity-list">
-
-                    <div class="activity-item">
-
-                        <div class="activity-icon">
-                            📦
-                        </div>
-
-                        <div>
-
-                            <h4>
-                                Product Created
-                            </h4>
-
-                            <p>
-                                SMELLS TEE berhasil ditambahkan.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="activity-item">
-
-                        <div class="activity-icon">
-                            📈
-                        </div>
-
-                        <div>
-
-                            <h4>
-                                Stock Updated
-                            </h4>
-
-                            <p>
-                                Stock berubah menjadi 10 pcs.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                    <div class="activity-item">
-
-                        <div class="activity-icon">
-                            🔐
-                        </div>
-
-                        <div>
-
-                            <h4>
-                                Admin Login
-                            </h4>
-
-                            <p>
-                                Login berhasil.
-                            </p>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-            <!-- =========================
-                 QUICK ACTION
-            ========================== -->
-
-            <div class="dashboard-panel">
-
-                <div class="panel-header">
-
-                    <h2>Quick Action</h2>
-
-                </div>
-
-                <div class="quick-action">
-
-                    <a href="products.html"
-                       class="quick-btn">
-
-                        ➕
-
-                        <span>Add Product</span>
-
-                    </a>
-
-                    <a href="stock.html"
-                       class="quick-btn">
-
-                        📈
-
-                        <span>Stock In</span>
-
-                    </a>
-
-                    <a href="stock.html"
-                       class="quick-btn">
-
-                        📉
-
-                        <span>Stock Out</span>
-
-                    </a>
-
-                    <a href="history.html"
-                       class="quick-btn">
-
-                        📜
-
-                        <span>History</span>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-        <!-- =========================
-             FOOTER
-        ========================== -->
-
-        <footer class="dashboard-footer">
-
-            <p>
-
-                © 2026 LIL TEES Admin Panel
-
-            </p>
-
-        </footer>
 
     </main>
 
