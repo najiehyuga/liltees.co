@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Products | Lil Tees Admin</title>
+
+<link rel="stylesheet" href="admin.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <aside class="sidebar">
+
+        <div class="sidebar-logo">
+
+            <img src="../images/logofooter.png">
+
+            <h2>LIL TEES</h2>
+
+        </div>
+
+        <nav>
+
+            <a href="dashboard.html">🏠 Dashboard</a>
+
+            <a class="active" href="products.html">📦 Products</a>
+
+            <a href="stock.html">📈 Stock</a>
+
+            <a href="history.html">📜 History</a>
+
+            <a href="settings.html">⚙ Settings</a>
+
+            <a href="#" id="logoutBtn">🚪 Logout</a>
+
+        </nav>
+
+    </aside>
+
+    <main class="content">
+
+        <div class="page-header">
+
+            <h1>Products</h1>
+
+            <button id="addProductBtn" class="yellow-btn">
+                + Add Product
+            </button>
+
+        </div>
+
+        <div id="productContainer" class="product-grid">
+
+        </div>
+
+        <!-- ADD PRODUCT MODAL -->
+
+<div id="productModal" class="modal">
+
+    <div class="modal-content">
+
+        <div class="modal-header">
+
+            <h2>Add Product</h2>
+
+            <button id="closeModal">&times;</button>
+
+        </div>
+
+        <form id="productForm">
+
+            <input
+                type="text"
+                id="name"
+                placeholder="Product Name"
+                required>
+
+            <input
+                type="number"
+                id="price"
+                placeholder="Price"
+                required>
+
+            <input
+                type="number"
+                id="stock"
+                placeholder="Stock"
+                required>
+
+            <textarea
+                id="description"
+                placeholder="Description"></textarea>
+
+            <label>Front Image</label>
+
+            <input
+                type="file"
+                id="frontImage"
+                accept="image/*">
+
+            <label>Back Image</label>
+
+            <input
+                type="file"
+                id="backImage"
+                accept="image/*">
+
+            <label>Size Chart</label>
+
+            <input
+                type="file"
+                id="sizeChart"
+                accept="image/*">
+
+            <label>
+
+                <input
+                    type="checkbox"
+                    id="active"
+                    checked>
+
+                Active
+
+            </label>
+
+            <button
+                class="yellow-btn"
+                type="submit">
+
+                Save Product
+
+            </button>
+
+        </form>
+
+    </div>
+
+</div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="guard.js"></script>
+
+<script src="products.js"></script>
+
+</body>
+
+</html>
