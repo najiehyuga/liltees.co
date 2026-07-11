@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
+
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Admin Login | Lil Tees</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="admin.css">
+    <title>Admin Login | Lil Tees</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 </head>
 
@@ -19,29 +22,56 @@
 
     <div class="login-card">
 
-        <img src="../images/logofooter.png" class="logo">
+        <img src="../images/logofooter.png"
+             class="login-logo">
 
-        <h2>Admin Panel</h2>
+        <h1>LIL TEES</h1>
 
-        <p>Login untuk mengelola website Lil Tees.</p>
+        <p>
+            Admin Panel
+        </p>
 
-        <input
-            type="email"
-            id="email"
-            placeholder="Email">
+        <form id="loginForm">
 
-        <input
-            type="password"
-            id="password"
-            placeholder="Password">
+            <div class="input-group">
 
-        <button onclick="login()">
+                <label>Email</label>
 
-            Login
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="admin@email.com"
+                    required>
 
-        </button>
+            </div>
 
-        <p id="message"></p>
+            <div class="input-group">
+
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="********"
+                    required>
+
+            </div>
+
+            <button
+                type="submit"
+                class="login-btn">
+
+                Login
+
+            </button>
+
+        </form>
+
+        <p
+            id="message"
+            class="message">
+
+        </p>
 
     </div>
 
