@@ -9,7 +9,7 @@
 
     <title>Dashboard | LIL TEES Admin</title>
 
-    <link rel="stylesheet" href="css/admin.css">
+    <link rel="stylesheet" href="../css/admin.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
@@ -23,36 +23,50 @@
 
 <div class="admin-layout">
 
-    <!-- Sidebar -->
+    <!-- SIDEBAR -->
 
     <aside class="sidebar">
 
-        <div>
+        <div class="sidebar-top">
 
             <div class="logo">
 
                 <img src="../images/logofooter.png" alt="Logo">
 
-                <h2>LIL TEES</h2>
+                <div>
+
+                    <h2>LIL TEES</h2>
+
+                    <span>Admin Panel</span>
+
+                </div>
 
             </div>
 
             <nav>
 
-                <a class="active" href="dashboard.html">
-                    🏠 Dashboard
+                <a href="dashboard.html" class="active">
+
+                    Dashboard
+
                 </a>
 
                 <a href="products.html">
-                    📦 Products
+
+                    Products
+
                 </a>
 
                 <a href="stock.html">
-                    📈 Stock
+
+                    Stock
+
                 </a>
 
                 <a href="history.html">
-                    📜 History
+
+                    History
+
                 </a>
 
             </nav>
@@ -61,31 +75,35 @@
 
         <button id="logoutBtn">
 
-            🚪 Logout
+            Logout
 
         </button>
 
     </aside>
 
-    <!-- Content -->
+    <!-- CONTENT -->
 
     <main class="content">
 
-        <div class="page-title">
+        <header class="page-header">
 
-            <h1>Dashboard</h1>
+            <div>
 
-            <p>
+                <h1>Dashboard</h1>
 
-                Selamat datang kembali 👋
+                <p>
 
-            </p>
+                    Selamat datang kembali 👋
 
-        </div>
+                </p>
 
-        <div class="dashboard-cards">
+            </div>
 
-            <div class="dashboard-card">
+        </header>
+
+        <section class="dashboard-cards">
+
+            <div class="card">
 
                 <span>Total Produk</span>
 
@@ -97,7 +115,7 @@
 
             </div>
 
-            <div class="dashboard-card">
+            <div class="card">
 
                 <span>Total Stock</span>
 
@@ -109,7 +127,7 @@
 
             </div>
 
-            <div class="dashboard-card">
+            <div class="card">
 
                 <span>Produk Aktif</span>
 
@@ -121,35 +139,59 @@
 
             </div>
 
-        </div>
+        </section>
 
-        <div class="quick-menu">
+        <section class="quick-menu">
 
-            <a href="products.html">
+            <a href="products.html" class="menu-card">
 
-                📦
+                <h3>Products</h3>
 
-                <span>Kelola Produk</span>
+                <p>
 
-            </a>
+                    Kelola produk.
 
-            <a href="stock.html">
-
-                📈
-
-                <span>Kelola Stock</span>
+                </p>
 
             </a>
 
-            <a href="history.html">
+            <a href="stock.html" class="menu-card">
 
-                📜
+                <h3>Stock</h3>
 
-                <span>Riwayat</span>
+                <p>
+
+                    Tambah atau kurangi stok.
+
+                </p>
 
             </a>
 
-        </div>
+            <a href="history.html" class="menu-card">
+
+                <h3>History</h3>
+
+                <p>
+
+                    Lihat riwayat stok.
+
+                </p>
+
+            </a>
+
+        </section>
+        <section class="info-box">
+
+            <h2>Informasi</h2>
+
+            <p>
+
+                Gunakan menu di samping untuk mengelola produk,
+                stok, dan melihat riwayat transaksi.
+
+            </p>
+
+        </section>
 
     </main>
 
@@ -159,9 +201,9 @@
 
 <script src="../js/supabase.js"></script>
 
-<script src="js/guard.js"></script>
+<script src="../js/guard.js"></script>
 
-<script src="js/dashboard.js"></script>
+<script src="../js/dashboard.js"></script>
 
 </body>
 
