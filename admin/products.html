@@ -3,14 +3,25 @@
 
 <head>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
 
-<title>Products | Lil Tees Admin</title>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="admin.css">
+    <title>Products | LIL TEES Admin</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="../css/admin.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
 
 </head>
 
@@ -18,51 +29,105 @@
 
 <div class="admin-layout">
 
+    <!-- Sidebar -->
+
     <aside class="sidebar">
 
-        <div class="sidebar-logo">
+        <div class="sidebar-top">
 
-            <img src="../images/logofooter.png">
+            <div class="logo">
 
-            <h2>LIL TEES</h2>
+                <img src="../images/logofooter.png"
+                     alt="Logo">
+
+                <div>
+
+                    <h2>LIL TEES</h2>
+
+                    <span>Admin Panel</span>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+
+                    Dashboard
+
+                </a>
+
+                <a href="products.html"
+                   class="active">
+
+                    Products
+
+                </a>
+
+                <a href="stock.html">
+
+                    Stock
+
+                </a>
+
+                <a href="history.html">
+
+                    History
+
+                </a>
+
+            </nav>
 
         </div>
 
-        <nav>
+        <button id="logoutBtn">
 
-            <a href="dashboard.html">🏠 Dashboard</a>
+            Logout
 
-            <a class="active" href="products.html">📦 Products</a>
-
-            <a href="stock.html">📈 Stock</a>
-
-            <a href="history.html">📜 History</a>
-
-            <a href="settings.html">⚙ Settings</a>
-
-            <a href="#" id="logoutBtn">🚪 Logout</a>
-
-        </nav>
+        </button>
 
     </aside>
+
+    <!-- Content -->
 
     <main class="content">
 
         <div class="page-header">
 
-            <h1>Products</h1>
+            <div>
 
-            <button id="addProductBtn" class="yellow-btn">
-                + Add Product
+                <h1>Products</h1>
+
+                <p>
+
+                    Kelola semua produk Lil Tees.
+
+                </p>
+
+            </div>
+
+            <button id="addProductBtn">
+
+                + Tambah Produk
+
             </button>
 
         </div>
 
-        <div id="productContainer" class="product-grid">
+        <div id="productContainer"
+             class="product-grid">
+                     <!-- Product akan muncul di sini -->
 
         </div>
 
-        <!-- ADD PRODUCT MODAL -->
+    </main>
+
+</div>
+
+<!-- =========================
+     MODAL TAMBAH PRODUK
+========================= -->
 
 <div id="productModal" class="modal">
 
@@ -70,73 +135,154 @@
 
         <div class="modal-header">
 
-            <h2>Add Product</h2>
+            <h2>Tambah Produk</h2>
 
-            <button id="closeModal">&times;</button>
+            <button id="closeModal">
+
+                ✕
+
+            </button>
 
         </div>
 
         <form id="productForm">
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Product Name"
-                required>
+            <div class="form-group">
 
-            <input
-                type="number"
-                id="price"
-                placeholder="Price"
-                required>
-
-            <input
-                type="number"
-                id="stock"
-                placeholder="Stock"
-                required>
-
-            <textarea
-                id="description"
-                placeholder="Description"></textarea>
-
-            <label>Front Image</label>
-
-            <input
-                type="file"
-                id="frontImage"
-                accept="image/*">
-
-            <label>Back Image</label>
-
-            <input
-                type="file"
-                id="backImage"
-                accept="image/*">
-
-            <label>Size Chart</label>
-
-            <input
-                type="file"
-                id="sizeChart"
-                accept="image/*">
-
-            <label>
+                <label>Nama Produk</label>
 
                 <input
-                    type="checkbox"
-                    id="active"
-                    checked>
+                    type="text"
+                    id="name"
+                    required>
 
-                Active
+            </div>
 
-            </label>
+            <div class="form-group">
+
+                <label>Harga</label>
+
+                <input
+                    type="number"
+                    id="price"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Stock</label>
+
+                <input
+                    type="number"
+                    id="stock"
+                    required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label>Deskripsi</label>
+
+                <textarea
+                    id="description"
+                    rows="4"></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <div class="form-group">
+
+                    <label>Front Image</label>
+                
+                    <div class="image-preview">
+                
+                        <img
+                            id="frontPreview"
+                            src="../images/no-image.png"
+                            alt="Front">
+                
+                    </div>
+                
+                    <input
+                        type="file"
+                        id="frontImage"
+                        accept="image/*">
+                
+                </div>
+
+            <div class="form-group">
+
+                <div class="form-group">
+
+                    <label>Back Image</label>
+                
+                    <div class="image-preview">
+                
+                        <img
+                            id="backPreview"
+                            src="../images/no-image.png"
+                            alt="Back">
+                
+                    </div>
+                
+                    <input
+                        type="file"
+                        id="backImage"
+                        accept="image/*">
+                
+                </div>
+
+            <div class="form-group">
+
+                <div class="form-group">
+
+                    <label>Size Chart</label>
+                
+                    <div class="image-preview">
+                
+                        <img
+                            id="sizePreview"
+                            src="../images/no-image.png"
+                            alt="Size Chart">
+                
+                    </div>
+                
+                    <input
+                        type="file"
+                        id="sizeChart"
+                        accept="image/*">
+                
+                </div>
+
+            <div class="form-group">
+
+                <label>Status</label>
+
+                <select id="status">
+
+                    <option value="true">
+
+                        Active
+
+                    </option>
+
+                    <option value="false">
+
+                        Non Active
+
+                    </option>
+
+                </select>
+
+            </div>
 
             <button
-                class="yellow-btn"
-                type="submit">
+                type="submit"
+                class="save-btn">
 
-                Save Product
+                Simpan Produk
 
             </button>
 
@@ -146,17 +292,13 @@
 
 </div>
 
-    </main>
-
-</div>
-
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script src="../js/supabase.js"></script>
 
-<script src="guard.js"></script>
+<script src="../js/guard.js"></script>
 
-<script src="products.js"></script>
+<script src="../js/products.js"></script>
 
 </body>
 
