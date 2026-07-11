@@ -15,9 +15,9 @@
 async function test(){
 
     const { data, error } =
-    await supabase
-        .from("products")
-        .select("*");
+await db
+.from("products")
+.select("*");
 
     console.log(data);
     console.log(error);
