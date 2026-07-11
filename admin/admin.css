@@ -150,17 +150,25 @@ ADMIN DASHBOARD
 }
 
 .sidebar-logo{
-
-    text-align:center;
+    display:flex;
+    align-items:center;
+    gap:12px;
 
     margin-bottom:40px;
 }
 
 .sidebar-logo img{
+    width:48px;
+    height:48px;
+    object-fit:contain;
+    flex-shrink:0;
+}
 
-    width:70px;
-
-    margin-bottom:10px;
+.sidebar-logo h2{
+    font-size:1.3rem;
+    color:white;
+    font-weight:700;
+    letter-spacing:1px;
 }
 
 .sidebar nav{
