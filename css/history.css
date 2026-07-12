@@ -1,0 +1,265 @@
+/* ==========================================
+   HISTORY PAGE
+========================================== */
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.search-box{
+
+    margin-bottom:30px;
+
+}
+
+.search-box input{
+
+    width:100%;
+
+    max-width:450px;
+
+    height:48px;
+
+    padding:0 18px;
+
+    background:#111827;
+
+    color:#ffffff;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    transition:var(--transition);
+
+}
+
+.search-box input:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+/* ==========================================
+   HISTORY LIST
+========================================== */
+
+.history-list{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
+}
+
+/* ==========================================
+   HISTORY CARD
+========================================== */
+
+.history-card{
+
+    display:flex;
+
+    gap:18px;
+
+    align-items:flex-start;
+
+    background:var(--card);
+
+    border:1px solid var(--border);
+
+    border-radius:16px;
+
+    padding:20px;
+
+    transition:var(--transition);
+
+}
+
+.history-card:hover{
+
+    border-color:var(--primary);
+
+    transform:translateY(-2px);
+
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+.history-icon{
+
+    width:50px;
+
+    height:50px;
+
+    min-width:50px;
+
+    border-radius:50%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:22px;
+
+    background:#111827;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.history-content{
+
+    flex:1;
+
+}
+
+.history-content h3{
+
+    color:var(--text);
+
+    font-size:18px;
+
+    margin-bottom:6px;
+
+}
+
+.history-content p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    margin-bottom:8px;
+
+}
+
+.history-date{
+
+    font-size:13px;
+
+    color:#64748b;
+
+}
+
+/* ==========================================
+   BADGE
+========================================== */
+
+.badge{
+
+    display:inline-block;
+
+    padding:6px 12px;
+
+    border-radius:999px;
+
+    font-size:12px;
+
+    font-weight:600;
+
+}
+
+.badge-add{
+
+    background:#16a34a;
+
+    color:#ffffff;
+
+}
+
+.badge-edit{
+
+    background:#2563eb;
+
+    color:#ffffff;
+
+}
+
+.badge-stock{
+
+    background:#f59e0b;
+
+    color:#ffffff;
+
+}
+
+.badge-delete{
+
+    background:#dc2626;
+
+    color:#ffffff;
+
+}
+
+/* ==========================================
+   EMPTY
+========================================== */
+
+.empty{
+
+    text-align:center;
+
+    padding:60px 20px;
+
+    border:2px dashed var(--border);
+
+    border-radius:16px;
+
+    color:var(--muted);
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media(max-width:768px){
+
+    .history-card{
+
+        padding:18px;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media(max-width:480px){
+
+    .history-card{
+
+        flex-direction:column;
+
+        align-items:center;
+
+        text-align:center;
+
+    }
+
+    .history-icon{
+
+        margin-bottom:10px;
+
+    }
+
+    .history-content h3{
+
+        font-size:17px;
+
+    }
+
+}

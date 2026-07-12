@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>History | LIL TEES Admin</title>
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <link
+        rel="stylesheet"
+        href="../css/admin.css">
+
+    <link
+        rel="stylesheet"
+        href="../css/history.css">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ==========================
+         SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="logo">
+
+                <img
+                    src="../images/logofooter.png"
+                    alt="Logo">
+
+                <div>
+
+                    <h2>LIL TEES</h2>
+
+                    <span>Admin Panel</span>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+
+                    Dashboard
+
+                </a>
+
+                <a href="products.html">
+
+                    Products
+
+                </a>
+
+                <a href="stock.html">
+
+                    Stock
+
+                </a>
+
+                <a
+                    href="history.html"
+                    class="active">
+
+                    History
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <button
+            class="logout-btn"
+            id="logoutBtn">
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- ==========================
+         CONTENT
+    =========================== -->
+
+    <main class="content">
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>History</h1>
+
+                <p>
+
+                    Riwayat aktivitas produk dan stok.
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ==========================
+             SEARCH
+        =========================== -->
+
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="searchHistory"
+                placeholder="Cari aktivitas...">
+
+        </div>
+
+        <!-- ==========================
+             HISTORY LIST
+        =========================== -->
+
+        <div
+            id="historyContainer"
+            class="history-list">
+
+            <!-- history.js -->
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="../js/guard.js"></script>
+
+<script src="../js/history.js"></script>
+
+</body>
+
+</html>
