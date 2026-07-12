@@ -1,3 +1,4 @@
+console.log("products.js loaded");
 // ======================================
 // ELEMENT
 // ======================================
@@ -187,14 +188,12 @@ productForm.addEventListener("submit", async(e)=>{
 // ======================================
 
 document
-
 .getElementById("logoutBtn")
-
-.addEventListener("click", async()=>{
+.addEventListener("click", async () => {
 
     await db.auth.signOut();
 
-    location.href = "login.html";
+    location.replace("login.html");
 
 });
 

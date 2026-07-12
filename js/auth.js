@@ -23,7 +23,7 @@ form.addEventListener("submit", async (e) => {
 
     }
 
-    location.href = "dashboard.html";
+    location.replace = "dashboard.html";
 
 });
 

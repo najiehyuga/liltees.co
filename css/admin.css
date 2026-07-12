@@ -518,13 +518,11 @@ nav a.active{
 
     }
 
-    /* ==========================================
-LOGIN
-========================================== */
+/* ==================================================
+   LOGIN
+================================================== */
 
-.login-container{
-
-    min-height:100vh;
+.login-page{
 
     display:flex;
 
@@ -532,15 +530,19 @@ LOGIN
 
     align-items:center;
 
-    padding:20px;
+    min-height:100vh;
+
+    background:var(--bg);
+
+    padding:40px 20px;
 
 }
 
-.login-card{
+.login-box{
 
     width:100%;
 
-    max-width:420px;
+    max-width:520px;
 
     background:var(--card);
 
@@ -548,13 +550,13 @@ LOGIN
 
     border-radius:18px;
 
-    padding:40px;
+    padding:45px;
 
-    text-align:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
 
 }
 
-.login-card img{
+.login-box img{
 
     width:60px;
 
@@ -568,63 +570,65 @@ LOGIN
 
 }
 
-.login-card h1{
+.login-box h1{
 
-    font-size:28px;
+    text-align:center;
 
-    margin-bottom:5px;
+    font-size:30px;
+
+    margin-bottom:8px;
 
 }
 
-.login-card p{
+.login-box p{
+
+    text-align:center;
 
     color:var(--text2);
 
-    margin-bottom:30px;
+    margin-bottom:35px;
 
 }
 
-.form-group{
-
-    text-align:left;
+.input-group{
 
     margin-bottom:20px;
 
 }
 
-.form-group label{
+.input-group label{
 
     display:block;
 
     margin-bottom:8px;
 
-    font-size:14px;
+    font-weight:500;
 
-    color:var(--text);
+    font-size:14px;
 
 }
 
-.form-group input{
+.input-group input{
 
     width:100%;
 
-    padding:14px;
+    height:48px;
 
-    background:#111827;
+    padding:0 15px;
 
     border:1px solid var(--border);
 
     border-radius:10px;
 
-    color:white;
+    background:#111827;
+
+    color:#fff;
 
     font-size:15px;
 
-    transition:.2s;
-
 }
 
-.form-group input:focus{
+.input-group input:focus{
 
     outline:none;
 
@@ -632,11 +636,13 @@ LOGIN
 
 }
 
-.login-card button{
+.login-box button{
 
     width:100%;
 
-    padding:14px;
+    height:48px;
+
+    margin-top:10px;
 
     border:none;
 
@@ -644,9 +650,9 @@ LOGIN
 
     background:var(--primary);
 
-    color:black;
+    color:#111827;
 
-    font-size:16px;
+    font-size:15px;
 
     font-weight:600;
 
@@ -656,9 +662,21 @@ LOGIN
 
 }
 
-.login-card button:hover{
+.login-box button:hover{
 
     opacity:.9;
+
+}
+
+#message{
+
+    margin-top:15px;
+
+    text-align:center;
+
+    font-size:14px;
+
+    color:#ef4444;
 
 }
 
@@ -891,6 +909,74 @@ IMAGE PREVIEW
 input[type=file]{
 
     width:100%;
+
+}
+
+/* ==========================
+MODAL
+========================== */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    top:0;
+
+    left:0;
+
+    width:100%;
+
+    height:100%;
+
+    background:rgba(0,0,0,.6);
+
+    justify-content:center;
+
+    align-items:center;
+
+    z-index:9999;
+
+}
+
+.modal-content{
+
+    width:90%;
+
+    max-width:600px;
+
+    background:#1e293b;
+
+    border-radius:16px;
+
+    padding:30px;
+
+}
+
+.modal-header{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    margin-bottom:20px;
+
+}
+
+.modal-header button{
+
+    background:none;
+
+    border:none;
+
+    color:white;
+
+    font-size:22px;
+
+    cursor:pointer;
 
 }
 
