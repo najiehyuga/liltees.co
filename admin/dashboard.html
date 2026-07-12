@@ -10,7 +10,7 @@
     <title>Dashboard | LIL TEES Admin</title>
 
     <link rel="stylesheet" href="../css/admin.css">
-    
+
     <link rel="stylesheet" href="../css/dashboard.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -27,60 +27,86 @@
 
     <!-- SIDEBAR -->
 
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-top">
-
+    
             <div class="logo">
-
-                <img src="../images/logofooter.png" alt="Logo">
-
-                <div>
-
+    
+                <button
+                    class="toggle-btn"
+                    id="toggleSidebar">
+    
+                    ☰
+    
+                </button>
+    
+                <img
+                    src="../images/logofooter.png"
+                    alt="Logo">
+    
+                <div class="logo-text">
+    
                     <h2>LIL TEES</h2>
-
+    
                     <span>Admin Panel</span>
-
+    
                 </div>
-
+    
             </div>
-
+    
             <nav>
-
-                <a href="dashboard.html" class="active">
-
-                    Dashboard
-
+    
+                <a href="dashboard.html">
+    
+                    <span class="icon">🏠</span>
+    
+                    <span class="text">Dashboard</span>
+    
                 </a>
-
+    
                 <a href="products.html">
-
-                    Products
-
+    
+                    <span class="icon">📦</span>
+    
+                    <span class="text">Products</span>
+    
                 </a>
-
+    
                 <a href="stock.html">
-
-                    Stock
-
+    
+                    <span class="icon">📊</span>
+    
+                    <span class="text">Stock</span>
+    
                 </a>
-
+    
                 <a href="history.html">
-
-                    History
-
+    
+                    <span class="icon">🕘</span>
+    
+                    <span class="text">History</span>
+    
                 </a>
-
+    
             </nav>
-
+    
         </div>
-
-        <button id="logoutBtn">
-
-            Logout
-
+    
+        <button
+            class="logout-btn"
+            class="logout-btn" id="logoutBtn">
+    
+            <span class="icon">🚪</span>
+    
+            <span class="text">
+    
+                Logout
+    
+            </span>
+    
         </button>
-
+    
     </aside>
 
     <!-- CONTENT -->
@@ -206,6 +232,8 @@
 <script src="../js/guard.js"></script>
 
 <script src="../js/dashboard.js"></script>
+
+<script src="../js/admin.js"></script>
 
 </body>
 

@@ -174,7 +174,7 @@ p{
 
     display:grid;
 
-    grid-template-columns:260px 1fr;
+    grid-template-columns:200px 1fr;
 
     min-height:100vh;
 
@@ -194,6 +194,8 @@ p{
 
 .sidebar{
 
+    width:220px;
+
     display:flex;
 
     flex-direction:column;
@@ -206,15 +208,13 @@ p{
 
     padding:24px;
 
+    transition:.3s ease;
+
 }
 
-.sidebar-top{
+.sidebar.collapsed{
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:35px;
+    width:75px;
 
 }
 
@@ -228,15 +228,15 @@ p{
 
     align-items:center;
 
-    gap:14px;
+    gap:12px;
 
 }
 
 .logo img{
 
-    width:55px;
+    width:42px;
 
-    height:55px;
+    height:42px;
 
     object-fit:contain;
 
@@ -244,21 +244,53 @@ p{
 
 .logo h2{
 
-    font-size:20px;
-
-    color:var(--text);
+    font-size:18px;
 
 }
 
 .logo span{
 
-    display:block;
-
-    margin-top:2px;
+    font-size:12px;
 
     color:var(--muted);
 
-    font-size:13px;
+}
+
+.logo-text{
+
+    transition:.3s;
+
+}
+
+/* ==========================================
+   SIDEBAR TOGGLE
+========================================== */
+
+.toggle-btn{
+
+    width:38px;
+
+    height:38px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:transparent;
+
+    color:#ffffff;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+.toggle-btn:hover{
+
+    background:var(--card-hover);
 
 }
 
@@ -282,7 +314,9 @@ p{
 
     align-items:center;
 
-    padding:14px 16px;
+    gap:14px;
+
+    padding:13px 15px;
 
     border-radius:12px;
 
@@ -290,7 +324,7 @@ p{
 
     font-weight:500;
 
-    transition:var(--transition);
+    transition:.3s;
 
 }
 
@@ -298,7 +332,7 @@ p{
 
     background:var(--card-hover);
 
-    color:var(--text);
+    color:#ffffff;
 
 }
 
@@ -308,19 +342,43 @@ p{
 
     color:#111827;
 
-    font-weight:600;
+}
+
+.icon{
+
+    min-width:22px;
+
+    text-align:center;
+
+    font-size:18px;
+
+}
+
+.text{
+
+    white-space:nowrap;
+
+    transition:.3s;
 
 }
 
 /* ==========================================
-   LOGOUT BUTTON
+   LOGOUT
 ========================================== */
 
-#logoutBtn{
+.logout-btn{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:12px;
 
     width:100%;
 
-    height:48px;
+    height:46px;
 
     border:none;
 
@@ -332,15 +390,13 @@ p{
 
     font-weight:600;
 
-    transition:var(--transition);
+    transition:.3s;
 
 }
 
-#logoutBtn:hover{
+.logout-btn:hover{
 
     opacity:.9;
-
-    transform:translateY(-2px);
 
 }
 
@@ -739,6 +795,42 @@ select:focus{
         font-size:28px;
 
     }
+
+}
+
+/* ==========================================
+   COLLAPSED SIDEBAR
+========================================== */
+
+.sidebar.collapsed .logo-text{
+
+    display:none;
+
+}
+
+.sidebar.collapsed .text{
+
+    display:none;
+
+}
+
+.sidebar.collapsed nav a{
+
+    justify-content:center;
+
+    padding:13px;
+
+}
+
+.sidebar.collapsed .logout-btn{
+
+    justify-content:center;
+
+}
+
+.sidebar.collapsed .toggle-btn{
+
+    margin:auto;
 
 }
 

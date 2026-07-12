@@ -42,64 +42,86 @@
          SIDEBAR
     =========================== -->
 
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
 
         <div class="sidebar-top">
-
+    
             <div class="logo">
-
+    
+                <button
+                    class="toggle-btn"
+                    id="toggleSidebar">
+    
+                    ☰
+    
+                </button>
+    
                 <img
                     src="../images/logofooter.png"
                     alt="Logo">
-
-                <div>
-
+    
+                <div class="logo-text">
+    
                     <h2>LIL TEES</h2>
-
+    
                     <span>Admin Panel</span>
-
+    
                 </div>
-
+    
             </div>
-
+    
             <nav>
-
+    
                 <a href="dashboard.html">
-
-                    Dashboard
-
+    
+                    <span class="icon">🏠</span>
+    
+                    <span class="text">Dashboard</span>
+    
                 </a>
-
-                <a
-                    href="products.html"
-                    class="active">
-
-                    Products
-
+    
+                <a href="products.html">
+    
+                    <span class="icon">📦</span>
+    
+                    <span class="text">Products</span>
+    
                 </a>
-
+    
                 <a href="stock.html">
-
-                    Stock
-
+    
+                    <span class="icon">📊</span>
+    
+                    <span class="text">Stock</span>
+    
                 </a>
-
+    
                 <a href="history.html">
-
-                    History
-
+    
+                    <span class="icon">🕘</span>
+    
+                    <span class="text">History</span>
+    
                 </a>
-
+    
             </nav>
-
+    
         </div>
-
-        <button id="logoutBtn">
-
-            Logout
-
+    
+        <button
+            class="logout-btn"
+            class="logout-btn" id="logoutBtn">
+    
+            <span class="icon">🚪</span>
+    
+            <span class="text">
+    
+                Logout
+    
+            </span>
+    
         </button>
-
+    
     </aside>
 
     <!-- ==========================
@@ -330,6 +352,8 @@
 <script src="../js/guard.js"></script>
 
 <script src="../js/products-edit.js"></script>
+
+<script src="../js/admin.js"></script>
 
 </body>
 
