@@ -1,169 +1,122 @@
-console.log("products.js loaded");
 // ======================================
-// ELEMENT
+// PRODUCTS.JS
+// LIL TEES ADMIN
 // ======================================
 
-const modal = document.getElementById("productModal");
-
-const addProductBtn = document.getElementById("addProductBtn");
-
-const closeModal = document.getElementById("closeModal");
-
+// Container Product
 const productContainer = document.getElementById("productContainer");
-
-const productForm = document.getElementById("productForm");
-
-// ======================================
-// MODAL
-// ======================================
-
-addProductBtn.onclick = () => {
-
-    modal.style.display = "flex";
-
-};
-
-closeModal.onclick = () => {
-
-    modal.style.display = "none";
-
-};
-
-window.onclick = (e) => {
-
-    if (e.target === modal) {
-
-        modal.style.display = "none";
-
-    }
-
-};
-
-// ======================================
-// PREVIEW IMAGE
-// ======================================
-
-previewImage("frontImage", "frontPreview");
-
-previewImage("backImage", "backPreview");
-
-previewImage("sizeChart", "sizePreview");
-
-function previewImage(inputId, previewId){
-
-    const input = document.getElementById(inputId);
-
-    const preview = document.getElementById(previewId);
-
-    if(!input || !preview) return;
-
-    input.addEventListener("change", () => {
-
-        const file = input.files[0];
-
-        if(!file){
-
-            preview.src = "../images/no-image.png";
-
-            return;
-
-        }
-
-        preview.src = URL.createObjectURL(file);
-
-    });
-
-}
 
 // ======================================
 // LOAD PRODUCTS
 // ======================================
 
-async function loadProducts(){
+async function loadProducts() {
+
+    productContainer.innerHTML = `
+        <div class="empty">
+            <p>Loading products...</p>
+        </div>
+    `;
 
     const { data, error } = await db
-
         .from("products")
-
         .select("*")
+        .order("id", { ascending: false });
 
-        .order("id");
-
-    if(error){
+    if (error) {
 
         console.error(error);
 
-        return;
-
-    }
-
-    productContainer.innerHTML = "";
-
-    if(data.length === 0){
-
         productContainer.innerHTML = `
-
             <div class="empty">
-
-                <h2>Belum ada produk.</h2>
-
-                <p>Klik "Tambah Produk" untuk mulai.</p>
-
+                <p>Gagal mengambil data produk.</p>
             </div>
-
         `;
 
         return;
-
     }
 
-    data.forEach(product=>{
+    if (!data || data.length === 0) {
+
+        productContainer.innerHTML = `
+            <div class="empty">
+                <h3>Belum ada produk</h3>
+                <p>Silakan tambahkan produk baru.</p>
+            </div>
+        `;
+
+        return;
+    }
+
+    renderProducts(data);
+
+}
+
+// ======================================
+// RENDER PRODUCT
+// ======================================
+
+function renderProducts(products) {
+
+    productContainer.innerHTML = "";
+
+    products.forEach(product => {
 
         productContainer.innerHTML += `
 
-            <div class="product-card">
+        <div class="product-card">
 
-                <img
-                    src="${product.front_image || "../images/no-image.png"}"
-                    alt="${product.name}">
+            <img
+                src="${product.front_image || "../images/no-image.png"}"
+                alt="${product.name}">
 
-                <div class="product-info">
+            <div class="product-info">
 
-                    <h3>${product.name}</h3>
+                <h3>${product.name}</h3>
 
-                    <p>${product.description || "-"}</p>
+                <p>${product.description || "-"}</p>
 
-                    <h4>
+                <h2>
+                    Rp ${Number(product.price).toLocaleString("id-ID")}
+                </h2>
 
-                        Rp ${Number(product.price).toLocaleString("id-ID")}
-
-                    </h4>
+                <div class="product-meta">
 
                     <span>
+                        📦 Stock : ${product.stock}
+                    </span>
 
-                        Stock : ${product.stock}
+                    <span class="${product.is_active ? "active" : "inactive"}">
+
+                        ${product.is_active ? "Active" : "Non Active"}
 
                     </span>
 
-                    <div class="product-action">
+                </div>
 
-                        <button class="edit-btn">
+                <div class="product-action">
 
-                            Edit
+                    <button
+                        class="edit-btn"
+                        onclick="editProduct(${product.id})">
 
-                        </button>
+                        Edit
 
-                        <button class="delete-btn">
+                    </button>
 
-                            Hapus
+                    <button
+                        class="delete-btn"
+                        onclick="deleteProduct(${product.id})">
 
-                        </button>
+                        Hapus
 
-                    </div>
+                    </button>
 
                 </div>
 
             </div>
+
+        </div>
 
         `;
 
@@ -172,16 +125,46 @@ async function loadProducts(){
 }
 
 // ======================================
-// SIMPAN PRODUK
+// EDIT PRODUCT
 // ======================================
 
-productForm.addEventListener("submit", async(e)=>{
+function editProduct(id){
 
-    e.preventDefault();
+    location.href = `product-edit.html?id=${id}`;
 
-    alert("Upload gambar akan kita kerjakan pada tahap berikutnya 😊");
+}
 
-});
+// ======================================
+// DELETE PRODUCT
+// ======================================
+
+async function deleteProduct(id){
+
+    const confirmDelete = confirm(
+        "Yakin ingin menghapus produk ini?"
+    );
+
+    if(!confirmDelete) return;
+
+    const { error } = await db
+
+        .from("products")
+
+        .delete()
+
+        .eq("id", id);
+
+    if(error){
+
+        alert(error.message);
+
+        return;
+
+    }
+
+    loadProducts();
+
+}
 
 // ======================================
 // LOGOUT
@@ -197,6 +180,8 @@ document
 
 });
 
+// ======================================
+// START
 // ======================================
 
 loadProducts();

@@ -62,86 +62,52 @@ async function uploadImage(file){
 
 const form = document.getElementById("productForm");
 
-form.addEventListener("submit", async(e)=>{
+form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    try{
+    const saveButton = form.querySelector("button");
 
-        const frontUrl = await uploadImage(
+    saveButton.disabled = true;
+    saveButton.textContent = "Menyimpan...";
 
-            document.getElementById("frontImage").files[0]
+    const { error } = await db
 
-        );
+        .from("products")
 
-        const backUrl = await uploadImage(
+        .insert({
 
-            document.getElementById("backImage").files[0]
+            name: document.getElementById("name").value,
 
-        );
+            price: Number(document.getElementById("price").value),
 
-        const sizeUrl = await uploadImage(
+            stock: Number(document.getElementById("stock").value),
 
-            document.getElementById("sizeChart").files[0]
+            description: document.getElementById("description").value,
 
-        );
+            is_active:
+                document.getElementById("status").value === "true"
 
-        const { error } = await db
+        });
 
-            .from("products")
+    saveButton.disabled = false;
+    saveButton.textContent = "Simpan Produk";
 
-            .insert({
+    if (error) {
 
-                name: document.getElementById("name").value,
+        console.error(error);
 
-                description: document.getElementById("description").value,
+        alert(error.message);
 
-                price: Number(
-
-                    document.getElementById("price").value
-
-                ),
-
-                stock: Number(
-
-                    document.getElementById("stock").value
-
-                ),
-
-                front_image: frontUrl,
-
-                back_image: backUrl,
-
-                size_chart: sizeUrl,
-
-                is_active:
-
-                    document.getElementById("status").value === "true"
-
-            });
-
-        if(error){
-
-            throw error;
-
-        }
-
-        alert("Produk berhasil ditambahkan.");
-
-        location.href = "products.html";
+        return;
 
     }
 
-    catch(err){
+    alert("Produk berhasil ditambahkan.");
 
-        console.error(err);
-
-        alert(err.message);
-
-    }
+    location.replace("products.html");
 
 });
-
 // ======================================
 // LOGOUT
 // ======================================
