@@ -3,55 +3,39 @@
 ========================================== */
 
 *{
-
     margin:0;
-
     padding:0;
-
     box-sizing:border-box;
-
 }
 
 html{
-
     scroll-behavior:smooth;
+}
 
+body{
+    font-family:"Poppins",sans-serif;
+    background:#0f172a;
+    color:#fff;
+    min-height:100vh;
+    line-height:1.6;
+    overflow-x:hidden;
 }
 
 img{
-
-    display:block;
-
     max-width:100%;
-
+    display:block;
 }
 
 a{
-
-    text-decoration:none;
-
     color:inherit;
-
+    text-decoration:none;
 }
 
-button{
-
-    font-family:inherit;
-
-    cursor:pointer;
-
-}
-
+button,
 input,
-
 textarea,
-
-select,
-
-button{
-
+select{
     font:inherit;
-
 }
 
 /* ==========================================
@@ -61,76 +45,21 @@ button{
 :root{
 
     --bg:#0f172a;
-
     --card:#1e293b;
-
-    --card-hover:#243247;
+    --card2:#273549;
 
     --border:#334155;
 
     --text:#ffffff;
-
     --muted:#94a3b8;
 
     --primary:#fbbf24;
-
+    --success:#16a34a;
     --danger:#dc2626;
 
-    --success:#16a34a;
-
-    --warning:#f59e0b;
-
-    --radius:16px;
+    --radius:14px;
 
     --transition:.25s ease;
-
-}
-
-/* ==========================================
-   BODY
-========================================== */
-
-body{
-
-    font-family:"Poppins",sans-serif;
-
-    background:var(--bg);
-
-    color:var(--text);
-
-    min-height:100vh;
-
-    overflow-x:hidden;
-
-    line-height:1.6;
-
-}
-
-/* ==========================================
-   TYPOGRAPHY
-========================================== */
-
-h1,
-
-h2,
-
-h3,
-
-h4,
-
-h5,
-
-h6{
-
-    font-weight:600;
-
-    line-height:1.3;
-
-}
-
-p{
-
-    color:var(--muted);
 
 }
 
@@ -139,31 +68,12 @@ p{
 ========================================== */
 
 ::-webkit-scrollbar{
-
     width:8px;
-
-    height:8px;
-
-}
-
-::-webkit-scrollbar-track{
-
-    background:#111827;
-
 }
 
 ::-webkit-scrollbar-thumb{
-
     background:#475569;
-
-    border-radius:999px;
-
-}
-
-::-webkit-scrollbar-thumb:hover{
-
-    background:#64748b;
-
+    border-radius:20px;
 }
 
 /* ==========================================
@@ -174,7 +84,7 @@ p{
 
     display:grid;
 
-    grid-template-columns:200px 1fr;
+    grid-template-columns:220px 1fr;
 
     min-height:100vh;
 
@@ -182,9 +92,7 @@ p{
 
 .content{
 
-    padding:32px;
-
-    overflow-x:auto;
+    padding:30px;
 
 }
 
@@ -194,7 +102,9 @@ p{
 
 .sidebar{
 
-    width:220px;
+    background:var(--card);
+
+    border-right:1px solid var(--border);
 
     display:flex;
 
@@ -202,19 +112,19 @@ p{
 
     justify-content:space-between;
 
-    background:var(--card);
+    padding:20px;
 
-    border-right:1px solid var(--border);
-
-    padding:24px;
-
-    transition:.3s ease;
+    transition:.3s;
 
 }
 
-.sidebar.collapsed{
+.sidebar-top{
 
-    width:75px;
+    display:flex;
+
+    flex-direction:column;
+
+    gap:30px;
 
 }
 
@@ -238,8 +148,6 @@ p{
 
     height:42px;
 
-    object-fit:contain;
-
 }
 
 .logo h2{
@@ -250,52 +158,14 @@ p{
 
 .logo span{
 
-    font-size:12px;
-
     color:var(--muted);
 
-}
-
-.logo-text{
-
-    transition:.3s;
+    font-size:12px;
 
 }
 
 /* ==========================================
-   SIDEBAR TOGGLE
-========================================== */
-
-.toggle-btn{
-
-    width:38px;
-
-    height:38px;
-
-    border:none;
-
-    border-radius:10px;
-
-    background:transparent;
-
-    color:#ffffff;
-
-    font-size:20px;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-.toggle-btn:hover{
-
-    background:var(--card-hover);
-
-}
-
-/* ==========================================
-   NAVIGATION
+   MENU
 ========================================== */
 
 .sidebar nav{
@@ -304,35 +174,27 @@ p{
 
     flex-direction:column;
 
-    gap:10px;
+    gap:8px;
 
 }
 
 .sidebar nav a{
 
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
     padding:13px 15px;
 
-    border-radius:12px;
+    border-radius:10px;
 
     color:var(--muted);
 
-    font-weight:500;
-
-    transition:.3s;
+    transition:.2s;
 
 }
 
 .sidebar nav a:hover{
 
-    background:var(--card-hover);
+    background:var(--card2);
 
-    color:#ffffff;
+    color:#fff;
 
 }
 
@@ -342,23 +204,7 @@ p{
 
     color:#111827;
 
-}
-
-.icon{
-
-    min-width:22px;
-
-    text-align:center;
-
-    font-size:18px;
-
-}
-
-.text{
-
-    white-space:nowrap;
-
-    transition:.3s;
+    font-weight:600;
 
 }
 
@@ -368,29 +214,19 @@ p{
 
 .logout-btn{
 
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:12px;
-
     width:100%;
 
-    height:46px;
+    height:45px;
 
     border:none;
 
-    border-radius:12px;
+    border-radius:10px;
 
     background:var(--danger);
 
-    color:#ffffff;
+    color:#fff;
 
-    font-weight:600;
-
-    transition:.3s;
+    cursor:pointer;
 
 }
 
@@ -401,23 +237,7 @@ p{
 }
 
 /* ==========================================
-   CONTENT
-========================================== */
-
-.content{
-
-    display:flex;
-
-    flex-direction:column;
-
-    padding:35px;
-
-    overflow-x:auto;
-
-}
-
-/* ==========================================
-   PAGE HEADER
+   HEADER
 ========================================== */
 
 .page-header{
@@ -426,11 +246,11 @@ p{
 
     justify-content:space-between;
 
-    align-items:flex-end;
-
-    gap:20px;
+    align-items:center;
 
     margin-bottom:30px;
+
+    gap:20px;
 
 }
 
@@ -438,51 +258,106 @@ p{
 
     font-size:32px;
 
-    color:var(--text);
-
-    margin-bottom:5px;
-
 }
 
 .page-header p{
 
     color:var(--muted);
 
-    font-size:15px;
+    font-size:14px;
 
 }
 
 /* ==========================================
-   GLOBAL BUTTON
+   CARD
 ========================================== */
 
-.primary-btn,
+.card{
 
-.save-btn,
+    background:var(--card);
 
-.back-btn,
+    border:1px solid var(--border);
 
-.delete-btn{
+    border-radius:var(--radius);
 
-    display:inline-flex;
+    padding:22px;
 
-    justify-content:center;
+}
 
-    align-items:center;
+/* ==========================================
+   FORM
+========================================== */
+
+.form-group{
+
+    display:flex;
+
+    flex-direction:column;
 
     gap:8px;
 
-    height:46px;
+    margin-bottom:18px;
 
-    padding:0 20px;
+}
+
+.form-group label{
+
+    font-size:14px;
+
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:13px 15px;
+
+    border:1px solid var(--border);
+
+    border-radius:10px;
+
+    background:#111827;
+
+    color:#fff;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:none;
+
+    border-color:var(--primary);
+
+}
+
+textarea{
+
+    resize:vertical;
+
+}
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.primary-btn,
+.save-btn,
+.back-btn,
+.delete-btn{
 
     border:none;
 
-    border-radius:12px;
+    border-radius:10px;
 
-    font-weight:600;
+    padding:12px 18px;
 
-    transition:var(--transition);
+    cursor:pointer;
+
+    transition:.2s;
 
 }
 
@@ -494,27 +369,11 @@ p{
 
 }
 
-.primary-btn:hover{
-
-    opacity:.9;
-
-    transform:translateY(-2px);
-
-}
-
 .save-btn{
 
     background:var(--success);
 
-    color:#ffffff;
-
-}
-
-.save-btn:hover{
-
-    opacity:.9;
-
-    transform:translateY(-2px);
+    color:#fff;
 
 }
 
@@ -522,13 +381,7 @@ p{
 
     background:#475569;
 
-    color:#ffffff;
-
-}
-
-.back-btn:hover{
-
-    background:#64748b;
+    color:#fff;
 
 }
 
@@ -536,107 +389,26 @@ p{
 
     background:var(--danger);
 
-    color:#ffffff;
+    color:#fff;
 
 }
 
+.primary-btn:hover,
+.save-btn:hover,
+.back-btn:hover,
 .delete-btn:hover{
 
-    opacity:.9;
+    transform:translateY(-2px);
 
 }
 
 /* ==========================================
-   GLOBAL FORM
-========================================== */
-
-.form-group{
-
-    display:flex;
-
-    flex-direction:column;
-
-    gap:8px;
-
-    margin-bottom:20px;
-
-}
-
-.form-group label{
-
-    font-size:14px;
-
-    font-weight:500;
-
-    color:var(--text);
-
-}
-
-input,
-
-textarea,
-
-select{
-
-    width:100%;
-
-    padding:14px 16px;
-
-    background:#111827;
-
-    color:var(--text);
-
-    border:1px solid var(--border);
-
-    border-radius:12px;
-
-    transition:var(--transition);
-
-}
-
-textarea{
-
-    resize:vertical;
-
-    min-height:120px;
-
-}
-
-input:focus,
-
-textarea:focus,
-
-select:focus{
-
-    outline:none;
-
-    border-color:var(--primary);
-
-}
-
-/* ==========================================
-   GLOBAL CARD
-========================================== */
-
-.card{
-
-    background:var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:16px;
-
-    padding:24px;
-
-}
-
-/* ==========================================
-   UTILITY
+   UTILITIES
 ========================================== */
 
 .hidden{
 
-    display:none !important;
+    display:none!important;
 
 }
 
@@ -646,21 +418,9 @@ select:focus{
 
 }
 
-.text-right{
-
-    text-align:right;
-
-}
-
 .w-100{
 
     width:100%;
-
-}
-
-.mt-10{
-
-    margin-top:10px;
 
 }
 
@@ -670,47 +430,9 @@ select:focus{
 
 }
 
-.mt-30{
-
-    margin-top:30px;
-
-}
-
-.mb-10{
-
-    margin-bottom:10px;
-
-}
-
 .mb-20{
 
     margin-bottom:20px;
-
-}
-
-.mb-30{
-
-    margin-bottom:30px;
-
-}
-
-/* ==========================================
-   RESPONSIVE
-========================================== */
-
-@media (max-width:992px){
-
-    .admin-layout{
-
-        grid-template-columns:220px 1fr;
-
-    }
-
-    .content{
-
-        padding:25px;
-
-    }
 
 }
 
@@ -722,63 +444,33 @@ select:focus{
 
     .admin-layout{
 
-        display:flex;
-
-        flex-direction:column;
+        display:block;
 
     }
 
     .sidebar{
 
-        width:100% !important;
-
-        padding:12px 16px;
-
         border-right:none;
 
         border-bottom:1px solid var(--border);
+
+        padding:15px;
 
     }
 
     .sidebar-top{
 
-        gap:14px;
-
-    }
-
-    .logo{
-
-        justify-content:space-between;
-
-    }
-
-    .logo img{
-
-        width:34px;
-
-        height:34px;
-
-    }
-
-    .logo h2{
-
-        font-size:18px;
-
-    }
-
-    .logo span{
-
-        display:none;
+        gap:18px;
 
     }
 
     .sidebar nav{
 
-        display:flex;
-
         flex-direction:row;
 
         justify-content:space-between;
+
+        flex-wrap:wrap;
 
         gap:8px;
 
@@ -788,31 +480,13 @@ select:focus{
 
         flex:1;
 
-        justify-content:center;
+        text-align:center;
+
+        min-width:80px;
 
         padding:10px;
 
-        border-radius:10px;
-
         font-size:13px;
-
-    }
-
-    .sidebar nav a .icon{
-
-        font-size:18px;
-
-    }
-
-    .sidebar nav a .text{
-
-        display:none;
-
-    }
-
-    .logout-btn{
-
-        display:none;
 
     }
 
@@ -822,107 +496,17 @@ select:focus{
 
     }
 
-}
+    .page-header{
 
-/* ==========================================
-   COLLAPSED SIDEBAR
-========================================== */
+        flex-direction:column;
 
-.sidebar.collapsed .logo-text{
-
-    display:none;
-
-}
-
-.sidebar.collapsed .text{
-
-    display:none;
-
-}
-
-.sidebar.collapsed nav a{
-
-    justify-content:center;
-
-    padding:13px;
-
-}
-
-.sidebar.collapsed .logout-btn{
-
-    justify-content:center;
-
-}
-
-.sidebar.collapsed .toggle-btn{
-
-    margin:auto;
-
-}
-
-/* ==========================================
-   SMALL MOBILE
-========================================== */
-
-@media (max-width:480px){
-
-    .logo img{
-
-        width:45px;
-
-        height:45px;
-
-    }
-
-    .logo h2{
-
-        font-size:18px;
-
-    }
-
-    .logo span{
-
-        font-size:12px;
-
-    }
-
-    .sidebar nav a{
-
-        font-size:14px;
-
-        padding:12px;
-
-        min-width:100%;
-
-    }
-
-    .content{
-
-        padding:16px;
+        align-items:flex-start;
 
     }
 
     .page-header h1{
 
-        font-size:24px;
-
-    }
-
-    .page-header p{
-
-        font-size:14px;
-
-    }
-
-    .primary-btn,
-
-    .save-btn,
-
-    .back-btn,
-
-    .delete-btn{
-
-        width:100%;
+        font-size:26px;
 
     }
 
