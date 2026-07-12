@@ -178,27 +178,23 @@
                         placeholder="Deskripsi produk..."></textarea>
 
                 </div>
-                                <!-- ==========================
+                <!-- ==========================
                      FRONT IMAGE
                 =========================== -->
 
-                <div class="form-group">
+                <div class="image-preview">
 
-                    <label>Front Image</label>
-
-                    <div class="image-preview">
-
-                        <img
-                            id="frontPreview"
-                            src="../images/no-image.png"
-                            alt="Front Image">
-
-                    </div>
-
-                    <input
-                        type="file"
-                        id="frontImage"
-                        accept="image/*">
+                    <img
+                        id="frontPreview"
+                        alt="Front Image"
+                        style="display:none;">
+                
+                </div>
+                
+                <input
+                    type="file"
+                    id="frontImage"
+                    accept="image/*">
 
                 </div>
 
@@ -206,23 +202,19 @@
                      BACK IMAGE
                 =========================== -->
 
-                <div class="form-group">
+                <div class="image-preview">
 
-                    <label>Back Image</label>
-
-                    <div class="image-preview">
-
-                        <img
-                            id="backPreview"
-                            src="../images/no-image.png"
-                            alt="Back Image">
-
-                    </div>
-
-                    <input
-                        type="file"
-                        id="backImage"
-                        accept="image/*">
+                    <img
+                        id="backPreview"
+                        alt="Back Image"
+                        style="display:none;">
+                
+                </div>
+                
+                <input
+                    type="file"
+                    id="backImage"
+                    accept="image/*">
 
                 </div>
 
@@ -291,7 +283,7 @@
 
 <script src="../js/guard.js"></script>
 
-<script src="../js/product-add.js"></script>
+<script src="../js/products-add.js"></script>
 
 </body>
 
