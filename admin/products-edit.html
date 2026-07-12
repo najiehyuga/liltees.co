@@ -135,3 +135,202 @@
         <div class="form-card">
 
             <form id="productForm">
+                
+                <div class="form-grid">
+
+                    <!-- Nama Produk -->
+
+                    <div class="form-group full">
+
+                        <label>Nama Produk</label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            placeholder="Masukkan nama produk"
+                            required>
+
+                    </div>
+
+                    <!-- Harga -->
+
+                    <div class="form-group">
+
+                        <label>Harga</label>
+
+                        <input
+                            type="number"
+                            id="price"
+                            placeholder="Contoh : 99000"
+                            required>
+
+                    </div>
+
+                    <!-- Stock -->
+
+                    <div class="form-group">
+
+                        <label>Stock</label>
+
+                        <input
+                            type="number"
+                            id="stock"
+                            placeholder="Jumlah stock"
+                            required>
+
+                    </div>
+
+                    <!-- Status -->
+
+                    <div class="form-group full">
+
+                        <label>Status</label>
+
+                        <select id="status">
+
+                            <option value="true">
+
+                                Active
+
+                            </option>
+
+                            <option value="false">
+
+                                Non Active
+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Deskripsi -->
+
+                    <div class="form-group full">
+
+                        <label>Deskripsi</label>
+
+                        <textarea
+                            id="description"
+                            rows="5"
+                            placeholder="Deskripsi produk..."></textarea>
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================
+                     PREVIEW IMAGE
+                =========================== -->
+
+                <div class="preview-grid">
+
+                    <!-- Front Image -->
+
+                    <div class="form-group">
+
+                        <label>Front Image</label>
+
+                        <div class="image-preview">
+
+                            <img
+                                id="frontPreview"
+                                alt="Front Image"
+                                style="display:none;">
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="frontImage"
+                            accept="image/*">
+
+                    </div>
+
+                    <!-- Back Image -->
+
+                    <div class="form-group">
+
+                        <label>Back Image</label>
+
+                        <div class="image-preview">
+
+                            <img
+                                id="backPreview"
+                                alt="Back Image"
+                                style="display:none;">
+
+                        </div>
+
+                        <input
+                            type="file"
+                            id="backImage"
+                            accept="image/*">
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================
+                     PRODUCT INFO
+                =========================== -->
+
+                <div class="info-card">
+
+                    <div>
+
+                        <span>Dibuat</span>
+
+                        <strong id="createdAt">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>ID Produk</span>
+
+                        <strong id="productId">
+
+                            -
+
+                        </strong>
+
+                    </div>
+
+                </div>
+
+                <!-- ==========================
+                     BUTTON
+                =========================== -->
+
+                <button
+                    type="submit"
+                    class="save-btn">
+
+                    Update Produk
+
+                </button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="../js/guard.js"></script>
+
+<script src="../js/products-edit.js"></script>
+
+</body>
+
+</html>
