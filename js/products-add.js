@@ -152,12 +152,11 @@ form.addEventListener("submit", async (e) => {
 
     catch (err) {
 
-        console.error(err);
-
-        alert(err.message);
-
+        console.error("FULL ERROR:", err);
+    
+        alert(JSON.stringify(err, null, 2));
+    
     }
-
     finally {
 
         saveButton.disabled = false;
