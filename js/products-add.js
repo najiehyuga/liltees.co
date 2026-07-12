@@ -1,95 +1,66 @@
 // ======================================
-// SIMPAN PRODUK
+// PREVIEW IMAGE
 // ======================================
 
-const form = document.getElementById("productForm");
+previewImage("frontImage", "frontPreview");
+previewImage("backImage", "backPreview");
 
-form.addEventListener("submit", async (e) => {
+function previewImage(inputId, previewId) {
 
-    e.preventDefault();
+    const input = document.getElementById(inputId);
+    const preview = document.getElementById(previewId);
 
-    const saveButton = form.querySelector(".save-btn");
+    if (!input || !preview) return;
 
-    saveButton.disabled = true;
-    saveButton.textContent = "Menyimpan...";
+    input.addEventListener("change", () => {
 
-    try{
+        const file = input.files[0];
 
-        // Upload gambar
-        const frontImage = document.getElementById("frontImage").files[0];
+        if (!file) {
 
-        const backImage = document.getElementById("backImage").files[0];
-
-        const frontUrl = await uploadImage(frontImage);
-
-        const backUrl = await uploadImage(backImage);
-
-        // Simpan ke database
-        const { error } = await db
-
-            .from("products")
-
-            .insert({
-
-                name: document.getElementById("name").value,
-
-                price: Number(document.getElementById("price").value),
-
-                stock: Number(document.getElementById("stock").value),
-
-                description: document.getElementById("description").value,
-
-                front_image: frontUrl,
-
-                back_image: backUrl,
-
-                is_active:
-
-                    document.getElementById("status").value === "true"
-
-            });
-
-        if(error){
-
-            throw error;
+            preview.removeAttribute("src");
+            preview.style.display = "none";
+            return;
 
         }
 
-        alert("Produk berhasil ditambahkan.");
+        preview.src = URL.createObjectURL(file);
+        preview.style.display = "block";
 
-        location.replace("products.html");
+    });
 
-    }
+}
 
-    catch(err){
-
-        console.error(err);
-
-        alert(err.message);
-
-    }
-
-    finally{
-
-        saveButton.disabled = false;
-
-        saveButton.textContent = "Simpan Produk";
-
-    }
-
-});
 // ======================================
-// LOGOUT
+// UPLOAD IMAGE
 // ======================================
 
-document
+async function uploadImage(file, folder) {
 
-.getElementById("logoutBtn")
+    if (!file) return null;
 
-.addEventListener("click", async()=>{
+    const ext = file.name.split(".").pop();
 
-    await db.auth.signOut();
+    const fileName = `${folder}/${crypto.randomUUID()}.${ext}`;
 
-    location.href = "login.html";
+    const { error } = await db.storage
 
-});
+        .from("products")
+
+        .upload(fileName, file);
+
+    if (error) {
+
+        throw error;
+
+    }
+
+    const { data } = db.storage
+
+        .from("products")
+
+        .getPublicUrl(fileName);
+
+    return data.publicUrl;
+
+}
