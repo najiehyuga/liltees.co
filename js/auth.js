@@ -1,3 +1,5 @@
+console.log("auth.js loaded");
+
 const form = document.getElementById("loginForm");
 
 form.addEventListener("submit", async (e) => {
@@ -8,6 +10,11 @@ form.addEventListener("submit", async (e) => {
 
     const password = document.getElementById("password").value;
 
+    const button = form.querySelector("button");
+
+    button.disabled = true;
+    button.textContent = "Loading...";
+
     const { error } = await db.auth.signInWithPassword({
 
         email,
@@ -15,35 +22,27 @@ form.addEventListener("submit", async (e) => {
 
     });
 
+    button.disabled = false;
+    button.textContent = "Login";
+
     if (error) {
 
-        showMessage(error.message, "error");
+        showMessage("Email atau password salah.", "error");
 
         return;
 
     }
 
-    location.replace = "dashboard.html";
+    location.replace("dashboard.html");
 
 });
 
 function showMessage(message, type) {
 
-    let msg = document.getElementById("message");
-
-    if (!msg) {
-
-        msg = document.createElement("div");
-
-        msg.id = "message";
-
-        document.querySelector(".login-card").appendChild(msg);
-
-    }
+    const msg = document.getElementById("message");
 
     msg.textContent = message;
 
     msg.className = type;
-
 
 }
