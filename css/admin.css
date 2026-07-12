@@ -718,7 +718,7 @@ select:focus{
    MOBILE
 ========================================== */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .admin-layout{
 
@@ -732,31 +732,43 @@ select:focus{
 
         width:100% !important;
 
-        height:auto;
-
         padding:12px 16px;
 
         border-right:none;
 
         border-bottom:1px solid var(--border);
 
-        position:sticky;
-
-        top:0;
-
-        z-index:1000;
-
     }
 
     .sidebar-top{
 
-        gap:15px;
+        gap:14px;
 
     }
 
     .logo{
 
-        justify-content:center;
+        justify-content:space-between;
+
+    }
+
+    .logo img{
+
+        width:34px;
+
+        height:34px;
+
+    }
+
+    .logo h2{
+
+        font-size:18px;
+
+    }
+
+    .logo span{
+
+        display:none;
 
     }
 
@@ -770,39 +782,31 @@ select:focus{
 
         gap:8px;
 
-        margin-top:10px;
-
     }
 
     .sidebar nav a{
 
         flex:1;
 
-        flex-direction:column;
-
         justify-content:center;
 
-        align-items:center;
+        padding:10px;
 
-        gap:6px;
+        border-radius:10px;
 
-        padding:10px 6px;
-
-        font-size:12px;
+        font-size:13px;
 
     }
 
     .sidebar nav a .icon{
 
-        font-size:20px;
+        font-size:18px;
 
     }
 
     .sidebar nav a .text{
 
-        display:block;
-
-        font-size:11px;
+        display:none;
 
     }
 
@@ -815,22 +819,6 @@ select:focus{
     .content{
 
         padding:18px;
-
-    }
-
-    .page-header{
-
-        flex-direction:column;
-
-        align-items:flex-start;
-
-        gap:12px;
-
-    }
-
-    .page-header h1{
-
-        font-size:26px;
 
     }
 
