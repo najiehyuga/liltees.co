@@ -130,7 +130,7 @@ function renderProducts(products) {
 
 function editProduct(id){
 
-    location.href = `product-edit.html?id=${id}`;
+    location.href = `products-edit.html?id=${id}`;
 
 }
 
