@@ -868,31 +868,31 @@ MESSAGE
 
 }
 
-/* ===========================
+/* =====================================
    IMAGE PREVIEW
-=========================== */
+===================================== */
 
 .image-preview{
 
-    width:100%;
+    width:180px;
 
-    max-width:420px;
+    height:180px;
 
-    aspect-ratio:1/1;
+    margin:10px auto;
 
-    border:2px dashed #2b3855;
+    border:2px dashed #334155;
 
     border-radius:12px;
 
     overflow:hidden;
-
-    background:#101827;
 
     display:flex;
 
     justify-content:center;
 
     align-items:center;
+
+    background:#111827;
 
 }
 
@@ -902,9 +902,7 @@ MESSAGE
 
     height:100%;
 
-    object-fit:contain;
-
-    display:block;
+    object-fit:cover;
 
 }
 
@@ -986,13 +984,13 @@ MODAL
    MOBILE
 =========================== */
 
-@media (max-width:768px){
+@media(max-width:768px){
 
     .image-preview{
 
-        aspect-ratio:1/1;
+        width:140px;
 
-        max-width:100%;
+        height:140px;
 
     }
 
