@@ -4,7 +4,6 @@
 
 previewImage("frontImage", "frontPreview");
 previewImage("backImage", "backPreview");
-previewImage("sizeChart", "sizePreview");
 
 function previewImage(inputId, previewId){
 
