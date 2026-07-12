@@ -174,6 +174,44 @@ async function uploadImage(file, folder){
 
 }
 
+    // ======================================
+// DELETE OLD IMAGE
+// ======================================
+
+async function deleteImage(imageUrl){
+
+    if(!imageUrl) return;
+
+    try{
+
+        const url = new URL(imageUrl);
+
+        const path = url.pathname.split("/products/")[1];
+
+        if(!path) return;
+
+        const { error } = await db.storage
+
+            .from("products")
+
+            .remove([path]);
+
+        if(error){
+
+            console.error("Delete Image :", error);
+
+        }
+
+    }
+
+    catch(err){
+
+        console.error(err);
+
+    }
+
+}
+
 // ======================================
 // UPDATE PRODUCT
 // ======================================
@@ -204,17 +242,19 @@ form.addEventListener("submit", async(e)=>{
 
             .files[0];
 
-        if(frontFile){
+            if(frontFile){
 
-            frontUrl = await uploadImage(
-
-                frontFile,
-
-                "front"
-
-            );
-
-        }
+                frontUrl = await uploadImage(
+            
+                    frontFile,
+            
+                    "front"
+            
+                );
+            
+                await deleteImage(oldFrontImage);
+            
+            }
 
         // ==========================
         // BACK IMAGE
@@ -226,17 +266,19 @@ form.addEventListener("submit", async(e)=>{
 
             .files[0];
 
-        if(backFile){
+            if(backFile){
 
-            backUrl = await uploadImage(
-
-                backFile,
-
-                "back"
-
-            );
-
-        }
+                backUrl = await uploadImage(
+            
+                    backFile,
+            
+                    "back"
+            
+                );
+            
+                await deleteImage(oldBackImage);
+            
+            }
 
         // ==========================
         // UPDATE DATABASE
