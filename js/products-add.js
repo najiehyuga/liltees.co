@@ -40,22 +40,21 @@ async function uploadImage(file, folder) {
 
     const fileName = `${folder}/${crypto.randomUUID()}.${ext}`;
 
-    const { error } = await db.storage
+    console.log("Upload ke:", fileName);
 
+    const { data: uploadData, error } = await db.storage
         .from("products")
-
         .upload(fileName, file);
 
+    console.log("Upload Data:", uploadData);
+    console.log("Upload Error:", error);
+
     if (error) {
-
         throw error;
-
     }
 
     const { data } = db.storage
-
         .from("products")
-
         .getPublicUrl(fileName);
 
     return data.publicUrl;
