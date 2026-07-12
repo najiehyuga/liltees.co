@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Tambah Produk | LIL TEES Admin</title>
+
+    <link rel="stylesheet"
+          href="../css/admin.css">
+
+    <link rel="preconnect"
+          href="https://fonts.googleapis.com">
+
+    <link rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="admin-layout">
+
+    <!-- ==========================
+         SIDEBAR
+    =========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <div class="logo">
+
+                <img src="../images/logofooter.png"
+                     alt="Logo">
+
+                <div>
+
+                    <h2>LIL TEES</h2>
+
+                    <span>Admin Panel</span>
+
+                </div>
+
+            </div>
+
+            <nav>
+
+                <a href="dashboard.html">
+
+                    Dashboard
+
+                </a>
+
+                <a href="products.html"
+                   class="active">
+
+                    Products
+
+                </a>
+
+                <a href="stock.html">
+
+                    Stock
+
+                </a>
+
+                <a href="history.html">
+
+                    History
+
+                </a>
+
+            </nav>
+
+        </div>
+
+        <button id="logoutBtn">
+
+            Logout
+
+        </button>
+
+    </aside>
+
+    <!-- ==========================
+         CONTENT
+    =========================== -->
+
+    <main class="content">
+
+        <div class="page-header">
+
+            <div>
+
+                <h1>Tambah Produk</h1>
+
+                <p>
+
+                    Tambahkan produk baru ke katalog Lil Tees.
+
+                </p>
+
+            </div>
+
+            <a href="products.html"
+               class="back-btn">
+
+                ← Kembali
+
+            </a>
+
+        </div>
+
+        <!-- ==========================
+             FORM
+        =========================== -->
+
+        <div class="form-card">
+
+            <form id="productForm">
+
+                <div class="form-group">
+
+                    <label>Nama Produk</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Contoh : Smells Tee"
+                        required>
+
+                </div>
+
+                <div class="form-row">
+
+                    <div class="form-group">
+
+                        <label>Harga</label>
+
+                        <input
+                            type="number"
+                            id="price"
+                            placeholder="129000"
+                            required>
+
+                    </div>
+
+                    <div class="form-group">
+
+                        <label>Stock</label>
+
+                        <input
+                            type="number"
+                            id="stock"
+                            placeholder="10"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <div class="form-group">
+
+                    <label>Deskripsi</label>
+
+                    <textarea
+                        id="description"
+                        rows="5"
+                        placeholder="Deskripsi produk..."></textarea>
+
+                </div>
+                                <!-- ==========================
+                     FRONT IMAGE
+                =========================== -->
+
+                <div class="form-group">
+
+                    <label>Front Image</label>
+
+                    <div class="image-preview">
+
+                        <img
+                            id="frontPreview"
+                            src="../images/no-image.png"
+                            alt="Front Image">
+
+                    </div>
+
+                    <input
+                        type="file"
+                        id="frontImage"
+                        accept="image/*">
+
+                </div>
+
+                <!-- ==========================
+                     BACK IMAGE
+                =========================== -->
+
+                <div class="form-group">
+
+                    <label>Back Image</label>
+
+                    <div class="image-preview">
+
+                        <img
+                            id="backPreview"
+                            src="../images/no-image.png"
+                            alt="Back Image">
+
+                    </div>
+
+                    <input
+                        type="file"
+                        id="backImage"
+                        accept="image/*">
+
+                </div>
+
+                <!-- ==========================
+                     SIZE CHART
+                =========================== -->
+
+                <div class="form-group">
+
+                    <label>Size Chart</label>
+
+                    <div class="image-preview">
+
+                        <img
+                            id="sizePreview"
+                            src="../images/no-image.png"
+                            alt="Size Chart">
+
+                    </div>
+
+                    <input
+                        type="file"
+                        id="sizeChart"
+                        accept="image/*">
+
+                </div>
+
+                <!-- ==========================
+                     STATUS
+                =========================== -->
+
+                <div class="form-group">
+
+                    <label>Status Produk</label>
+
+                    <select id="status">
+
+                        <option value="true">
+
+                            Active
+
+                        </option>
+
+                        <option value="false">
+
+                            Non Active
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- ==========================
+                     BUTTON
+                =========================== -->
+
+                <div class="form-action">
+
+                    <a
+                        href="products.html"
+                        class="cancel-btn">
+
+                        Batal
+
+                    </a>
+
+                    <button
+                        type="submit"
+                        class="save-btn">
+
+                        Simpan Produk
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script src="../js/supabase.js"></script>
+
+<script src="../js/guard.js"></script>
+
+<script src="../js/product-add.js"></script>
+
+</body>
+
+</html>

@@ -58,7 +58,7 @@ document
 
     await db.auth.signOut();
 
-    location.href = "login.html";
+    location.replace("login.html");
 
 });
 
