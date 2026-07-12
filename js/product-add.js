@@ -1,61 +1,4 @@
 // ======================================
-// PREVIEW IMAGE
-// ======================================
-
-previewImage("frontImage", "frontPreview");
-previewImage("backImage", "backPreview");
-
-function previewImage(inputId, previewId){
-
-    const input = document.getElementById(inputId);
-
-    const preview = document.getElementById(previewId);
-
-    input.addEventListener("change", ()=>{
-
-        const file = input.files[0];
-
-        if(!file) return;
-
-        preview.src = URL.createObjectURL(file);
-
-    });
-
-}
-
-// ======================================
-// UPLOAD IMAGE
-// ======================================
-
-async function uploadImage(file){
-
-    if(!file) return null;
-
-    const fileName = `${Date.now()}-${file.name}`;
-
-    const { error } = await db.storage
-
-        .from("products")
-
-        .upload(fileName, file);
-
-    if(error){
-
-        throw error;
-
-    }
-
-    const { data } = db.storage
-
-        .from("products")
-
-        .getPublicUrl(fileName);
-
-    return data.publicUrl;
-
-}
-
-// ======================================
 // SIMPAN PRODUK
 // ======================================
 
@@ -65,46 +8,74 @@ form.addEventListener("submit", async (e) => {
 
     e.preventDefault();
 
-    const saveButton = form.querySelector("button");
+    const saveButton = form.querySelector(".save-btn");
 
     saveButton.disabled = true;
     saveButton.textContent = "Menyimpan...";
 
-    const { error } = await db
+    try{
 
-        .from("products")
+        // Upload gambar
+        const frontImage = document.getElementById("frontImage").files[0];
 
-        .insert({
+        const backImage = document.getElementById("backImage").files[0];
 
-            name: document.getElementById("name").value,
+        const frontUrl = await uploadImage(frontImage);
 
-            price: Number(document.getElementById("price").value),
+        const backUrl = await uploadImage(backImage);
 
-            stock: Number(document.getElementById("stock").value),
+        // Simpan ke database
+        const { error } = await db
 
-            description: document.getElementById("description").value,
+            .from("products")
 
-            is_active:
-                document.getElementById("status").value === "true"
+            .insert({
 
-        });
+                name: document.getElementById("name").value,
 
-    saveButton.disabled = false;
-    saveButton.textContent = "Simpan Produk";
+                price: Number(document.getElementById("price").value),
 
-    if (error) {
+                stock: Number(document.getElementById("stock").value),
 
-        console.error(error);
+                description: document.getElementById("description").value,
 
-        alert(error.message);
+                front_image: frontUrl,
 
-        return;
+                back_image: backUrl,
+
+                is_active:
+
+                    document.getElementById("status").value === "true"
+
+            });
+
+        if(error){
+
+            throw error;
+
+        }
+
+        alert("Produk berhasil ditambahkan.");
+
+        location.replace("products.html");
 
     }
 
-    alert("Produk berhasil ditambahkan.");
+    catch(err){
 
-    location.replace("products.html");
+        console.error(err);
+
+        alert(err.message);
+
+    }
+
+    finally{
+
+        saveButton.disabled = false;
+
+        saveButton.textContent = "Simpan Produk";
+
+    }
 
 });
 // ======================================
