@@ -868,31 +868,31 @@ MESSAGE
 
 }
 
-/* ==========================
-IMAGE PREVIEW
-========================== */
+/* ===========================
+   IMAGE PREVIEW
+=========================== */
 
 .image-preview{
 
     width:100%;
 
-    height:220px;
+    max-width:420px;
 
-    border:2px dashed var(--border);
+    aspect-ratio:1/1;
+
+    border:2px dashed #2b3855;
 
     border-radius:12px;
 
-    background:#111827;
+    overflow:hidden;
+
+    background:#101827;
 
     display:flex;
 
     justify-content:center;
 
     align-items:center;
-
-    overflow:hidden;
-
-    margin-bottom:12px;
 
 }
 
@@ -903,6 +903,8 @@ IMAGE PREVIEW
     height:100%;
 
     object-fit:contain;
+
+    display:block;
 
 }
 
@@ -977,6 +979,22 @@ MODAL
     font-size:22px;
 
     cursor:pointer;
+
+}
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media (max-width:768px){
+
+    .image-preview{
+
+        aspect-ratio:1/1;
+
+        max-width:100%;
+
+    }
 
 }
 
